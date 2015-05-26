@@ -1,0 +1,61 @@
+[user]
+	name = SpaceOne
+	email = space@wechall.net
+[alias]
+	st = status
+	ci = commit
+	ca = commit -a
+	ciclg = !gitci
+	aliases = "!git config -l | grep alias | cut -c 7-"
+	branches = !branches
+	sl = stash list
+	sp = stash pop
+	ed = branch --edit-description
+	f = commit --fixup=HEAD
+
+	# branches
+	b = branch
+	co = checkout
+	cob = checkout -b
+	pr = pull --rebase
+
+	diffstat = diff --stat -r
+	# diff
+	d = diff --color-words
+	dc = diff --color-words --cached
+	df = diff-index --color-words -p HEAD
+	diffc = diff --cached
+	#difff = diff-index -p HEAD
+	difff = diff --staged
+
+	# history of a file
+	filelog = log -u
+	# show history
+	ls = log --pretty=format:"%C(auto)%h\\ %Cgreen%>(12)%ar%C(auto)%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --graph
+	ll = log --pretty=format:"%C(auto)%h\\ %Cgreen%>(12)%ar%C(auto)%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --stat
+	# show latest tag
+	lasttag = describe --tags --abbrev=0
+	# show latest commit
+	tip = log HEAD -1 --stat --
+	# show who contributed to the project
+	who = shortlog -n -s --no-merges
+
+	# some git svn commands
+	up = svn rebase
+	sci = svn dcommit
+	unisvn = !gcu
+[push]
+	default = simple
+[color]
+	diff = auto
+	ui = auto
+[core]
+	pager = less -FSRX
+	editor = /usr/bin/vim
+
+[diff "jpg"]
+	textconv = exif
+	cachetextconv = true
+
+[diff "po"]
+	textconv=msgcat --no-location --no-wrap --sort-output
