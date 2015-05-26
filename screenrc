@@ -1,0 +1,2 @@
+hardstatus alwayslastline "%-w[%n %t]%+w%=%H %c Load: %l"
+startup_message off
