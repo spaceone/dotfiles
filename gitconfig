@@ -11,7 +11,7 @@
 	sl = stash list
 	sp = stash pop
 	ed = branch --edit-description
-	f = commit --fixup=HEAD
+	f = commit --ammend
 
 	# branches
 	b = branch
@@ -39,6 +39,11 @@
 	tip = log HEAD -1 --stat --
 	# show who contributed to the project
 	who = shortlog -n -s --no-merges
+
+	type = cat-file -t
+	dump = cat-file -p
+	pick = cherry-pick
+	merge = merge --ff-only
 
 	# some git svn commands
 	up = svn rebase
