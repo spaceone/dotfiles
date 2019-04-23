@@ -9,7 +9,6 @@ export EDITOR='vim'
 export LANG='de_DE.UTF-8'
 export PAGER='less'
 [ -e ~/.pythonrc.py ] && export PYTHONSTARTUP=$HOME/.pythonrc.py
-export GREP_OPTIONS='--color=auto'
 export GREP_COLOR='1;32'
 PROMPT_COMMAND='history -a' # write out history after each command
 

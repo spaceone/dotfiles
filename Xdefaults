@@ -1,5 +1,5 @@
 URxvt*transparent:true
-URxvt*borderLess:true
+#URxvt*borderLess:true
 
 URxvt.font: xft:DejaVu Sans Mono:size=9
 URxvt.visualBell: false
@@ -9,7 +9,7 @@ URxvt.imLocale: de_DE.UTF-8
 URxvt.scrollTtyOutput: false
 URxvt.scrollTtyKeypress: false
 
-! the mothafuckin importants thing for weechat:
+! very important for weechat:
 URxvt.colorBD: #FFFFFF
 
 URxvt.background: #000000
