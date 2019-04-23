@@ -25,8 +25,8 @@
 	dc = diff --color-words --cached
 	df = diff-index --color-words -p HEAD
 	diffc = diff --cached
-	#difff = diff-index -p HEAD
-	difff = diff --staged
+	difff = diff-index -p HEAD
+	#difff = diff --staged
 
 	# history of a file
 	filelog = log -u

@@ -52,7 +52,3 @@ docs/_build/
 
 # PyBuilder
 target/
-
-homerc
-univentionrc
-univention.siv

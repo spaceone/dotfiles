@@ -21,7 +21,6 @@ alias cl='clear; ls'
 alias du='du -kh'
 alias df='df --si -kThlx tmpfs'
 
-alias e='emacs -nw'
 alias vi='vim'
 alias diff='diff -u'
 alias dch='dch -i --no-auto-nmu'
@@ -42,10 +41,6 @@ alias lc='ls -ltcr'
 alias lu='ls -ltur'
 alias tree='tree -Csu'
 
-alias rlm='readlink -m'
-#alias scr='exec screen -xrr'
-#alias scr='exec screen -xRR'
-alias topu='top -u "$USER"'
 alias grephist='history | grep'
 alias histless='history | less'
 alias topu='top -u "$USER"'
@@ -56,8 +51,4 @@ IP=$(/sbin/ifconfig eth0 | awk '/inet / { print $2 }')
 function mkcd () {
   mkdir -p "$1"
   cd "$1"
-}
-
-function svndiff() {
-	vim <(svn diff "$@")
 }

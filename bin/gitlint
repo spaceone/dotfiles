@@ -1,0 +1,40 @@
+#!/bin/bash
+echo "=== UCSLint ==="
+ucslint
+
+#git diff --staged --name-status .
+
+echo "=== JSLint ==="
+js=$(git diff --name-status . "$@" | grep -e '^M.*\.js$' | sed 's/^M//')
+if [ -n "$js" ]; then
+	echo "$js"
+	jshint $js
+fi
+
+echo "=== PYTHON ==="
+for file in $(git diff --name-status "$@" | grep -e '^M.*\.py$' | sed 's/^M\s\+//'); do
+	if [ -n "$file" ]; then
+		echo "## $file"
+		python -m py_compile "$file" && rm -f "$file"c
+		pyflakes "$file"
+		pep8 --first "$file"
+		echo "##"
+	fi
+done
+
+for file in $(git diff --name-status "$@" | grep -e '^M.*\.php$' | sed 's/^M//'); do
+	echo "=== PHP === $file"
+	if [ -n "$file" ]; then
+		php -lf $file
+	fi
+done
+
+echo "=== Changed files ==="
+git st . "$@"
+
+echo "=== Changelog message ==="
+msg=$(dpkg-parsechangelog | sed '1,/ \./d; s/\s\+//')
+echo "$msg"
+
+echo "=== Version ==="
+dpkg-parsechangelog | sed '1,/Changes:/d; s/\s\+//; /unstable;/q;' | sed 's/unstable;.*//'
