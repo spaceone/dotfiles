@@ -18,6 +18,7 @@
 	co = checkout
 	cob = checkout -b
 	pr = pull --rebase
+	bl = "!bl () { ~/git/depot_tools/git_hyper_blame.py $(cat ~/.ignore_blame_commits) \"$@\"; }; bl"
 
 	diffstat = diff --stat -r
 	# diff
