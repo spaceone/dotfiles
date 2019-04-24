@@ -58,6 +58,7 @@ mplayer
 mrxvt
 ncdu
 net-tools
+nfs-kernel-server
 nmap
 node
 nodejs
@@ -104,6 +105,7 @@ rhino
 rxvt
 rxvt-perls
 rxvt-unicode
+samba
 sshfs
 strace
 subversion
