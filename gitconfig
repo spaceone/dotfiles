@@ -58,6 +58,19 @@
 [core]
 	pager = less -FSRX
 	editor = /usr/bin/vim
+	attributesfile = ~/.gitattributes
+
+[merge "pofile"]
+	name = custom merge driver for gettext po files
+	driver = git-po-merge %A %O %B
+
+[merge "merge-changelog"]
+	name = GNU-style ChangeLog merge driver
+	driver = /usr/bin/git-merge-changelog %O %A %B
+
+[merge "dpkg-mergechangelogs"]
+	name = debian/changelog merge driver
+	driver = dpkg-mergechangelogs -m %O %A %B %A
 
 [diff "jpg"]
 	textconv = exif

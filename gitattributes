@@ -1,0 +1,4 @@
+*.po merge=pofile
+*.pot merge=pofile
+ChangeLog merge=merge-changelog
+debian/changelog merge=dpkg-mergechangelogs
