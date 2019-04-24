@@ -20,3 +20,6 @@ echo 'execute pathogen#infect()' >> ~/.vimrc
 cd ~/.vim/bundle && \
 git clone --depth=1 https://github.com/vim-syntastic/syntastic.git
 ```
+
+# vim-autopep8
+https://github.com/tell-k/vim-autopep8

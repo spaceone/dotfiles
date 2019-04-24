@@ -65,6 +65,7 @@ let g:python_recommended_style=0
 " syntax checks using syntastics
 execute pathogen#infect()
 
+" https://github.com/vim-syntastic/syntastic
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
@@ -74,12 +75,11 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
-
-let g:autopep8_ignore="E501,W191,E265"
-let g:pymode_lint_ignore="E501,W191,E265"
-
 let g:syntastic_javascript_checkers = ['jshint']
 let g:syntastic_python_checkers = ['flake8', 'pyflakes', 'pep8']
 
-" supertab!
-" http://www.vim.org/scripts/script.php?script_id=1643
+" https://github.com/tell-k/vim-autopep8
+let g:autopep8_ignore="E501,W191,E265"
+let g:pymode_lint_ignore="E501,W191,E265"
+
+" supertab: http://www.vim.org/scripts/script.php?script_id=1643
