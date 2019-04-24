@@ -1,0 +1,12 @@
+#!/bin/bash
+set -e
+
+remote="$1"
+current_branch="$(git symbolic-ref HEAD | sed -e 's,.*/\(.*\),\1,')"
+
+if [ "$remote" != "intern" -a "$current_branch" = "univention" ]; then
+	echo 'DO NOT PUSH TO EXTERN!'
+	exit 1
+fi
+
+exit 0
