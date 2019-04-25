@@ -8,6 +8,8 @@ augroup filetypedetect
                         \    setfiletype python |
                         \  elseif getline(1) =~ '^#!/usr/share/ucs-test/runner /usr/share/ucs-test/selenium' |
                         \    setfiletype python |
+                        \  elseif getline(1) =~ '^#!/usr/share/ucs-test/runner /usr/bin/py.test' |
+                        \    setfiletype python |
                         \  elseif getline(1) =~ '^#!/usr/share/ucs-test/runner bash' |
                         \    setfiletype sh |
                         \  endif
