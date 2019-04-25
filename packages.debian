@@ -93,6 +93,7 @@ python-notify
 python-pam
 python-paramiko
 python-pil
+python-pip
 python-polib
 python-pyasn1-modules
 python-pytest
