@@ -64,6 +64,8 @@ node
 nodejs
 npm
 nscd
+okteta
+okular
 openvpn
 patch
 patchutils
@@ -78,6 +80,7 @@ python-argcomplete
 python-coverage
 python-dateutil
 python-flake8
+python-git
 python-heimdal
 python-image
 python-ipaddr
