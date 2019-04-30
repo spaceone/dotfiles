@@ -23,3 +23,7 @@ git clone --depth=1 https://github.com/vim-syntastic/syntastic.git
 
 # vim-autopep8
 https://github.com/tell-k/vim-autopep8
+
+# visual search
+https://github.com/BenBergman/vsearch.vim/blob/master/plugin/vsearch.vim
+wget -O ~/.vim/plugin/vsearch.vim https://raw.githubusercontent.com/BenBergman/vsearch.vim/master/plugin/vsearch.vim
