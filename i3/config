@@ -124,10 +124,11 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 
 # FIXME: get xdotool running
 # xsendword is part of https://github.com/spaceone/sendkeys
-#bindsym $mod+Shift+s exec "/usr/bin/xdotool type --window 0 univention"
+#bindsym --release $mod+Shift+s exec --no-startup-id "/usr/bin/xdotool type univention"
 bindsym $mod+Shift+s exec "~/bin/xsendword u n i v e n t i o n"
-#bindsym $mod+Shift+a exec "~/bin/xsendword Shift+a d m i n i s t r a t o r"
-bindsym --release $mod+Shift+a exec --no-startup-id "/usr/bin/xdotool type Administrator"
+bindsym $mod+Shift+a exec "~/bin/xsendword Shift+a d m i n i s t r a t o r"
+#bindsym --release $mod+Shift+a exec --no-startup-id "/usr/bin/xdotool type Administrator"
+#bindsym --release $mod+Shift+d exec --no-startup-id "/usr/bin/xdotool type 10.200.27.3."
 bindsym $mod+Shift+d exec "~/bin/xsendword 1 0 . 2 0 0 . 2 7 ."
 bindsym $mod+Alt+Left move workspace to output left
 bindsym $mod+Alt+Right move workspace to output right
@@ -169,6 +170,9 @@ bar {
 popup_during_fullscreen leave_fullscreen
 
 exec --no-startup-id nm-applet
+exec --no-startup-id kaze
+exec --no-startup-id pascom
+exec --no-startup-id rocketchat-desktop
 exec --no-startup-id xrandr --output DP-1 --left-of eDP-1 --auto --rate 75
 exec --no-startup-id xrandr --output eDP-1 --auto --rate 75
 bindsym --release $mod+Print exec --no-startup-id scrot '%Y-%m-%d$'
