@@ -1,4 +1,5 @@
 autopep8
+cheese
 chromium
 chromium-browser
 chromium-l10n
@@ -18,6 +19,7 @@ diff
 diffstat
 dig
 dnsutils
+dolphin
 dpkg-dev
 file
 findutils
@@ -49,6 +51,7 @@ less
 libcups2
 libnotify
 libnotify4
+libreoffice
 libx11-dev
 lightning
 locate
@@ -110,6 +113,7 @@ rxvt
 rxvt-perls
 rxvt-unicode
 samba
+scrot
 sshfs
 strace
 subversion
