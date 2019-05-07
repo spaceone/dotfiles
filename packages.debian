@@ -115,6 +115,7 @@ rxvt-perls
 rxvt-unicode
 samba
 scrot
+sqlite3
 sshfs
 strace
 subversion
@@ -132,6 +133,7 @@ univention-management-console-dev
 unrar
 vim
 virt-viewer
+vlc
 weechat
 wget
 whois
