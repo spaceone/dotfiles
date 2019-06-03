@@ -81,6 +81,7 @@ pyflakes
 pyqt4-dev-tools
 python-all
 python-argcomplete
+python-autopep8
 python-coverage
 python-dateutil
 python-flake8
@@ -106,6 +107,9 @@ python-qt4-dbus
 python-smbpasswd
 python-support
 python-yaml
+python-mimeparse
+python-tornado
+python-concurrent.futures
 rdate
 rdesktop
 resolvconf
@@ -131,11 +135,14 @@ univention-config-dev
 univention-dojo-dev
 univention-management-console-dev
 unrar
+upx
 vim
 virt-viewer
 vlc
 weechat
 wget
+wine
+wine32
 whois
 xdotool
 x-window-system-core
