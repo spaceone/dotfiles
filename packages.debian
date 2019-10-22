@@ -1,3 +1,4 @@
+ark
 autopep8
 cheese
 chromium
@@ -21,6 +22,7 @@ dig
 dnsutils
 dolphin
 dpkg-dev
+ffmpeg
 file
 findutils
 firmware-iwlwifi
@@ -39,9 +41,11 @@ ifconfig
 imagemagick
 inetutils-tools
 inkscape
+iptables-persistent
 ipython
 jshint
 jslint
+k3b
 kate
 kaze
 kinit
@@ -59,8 +63,10 @@ lsof
 mkisofs
 mplayer
 mrxvt
+mtr-tiny
 ncdu
 net-tools
+network-manager-openvpn
 nfs-kernel-server
 nmap
 node
@@ -78,6 +84,7 @@ php5
 plasma-integration
 pstoedit
 pyflakes
+pylint
 pyqt4-dev-tools
 python-all
 python-argcomplete
@@ -101,6 +108,7 @@ python-pil
 python-pip
 python-polib
 python-pyasn1-modules
+python-pycurl
 python-pytest
 python-pytest-cov
 python-qt4-dbus
@@ -121,6 +129,7 @@ samba
 scrot
 sqlite3
 sshfs
+socat
 strace
 subversion
 sudo
@@ -148,3 +157,5 @@ xdotool
 xsel
 x-window-system-core
 zsh
+cifs-utils
+smbclient
