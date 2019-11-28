@@ -145,5 +145,6 @@ wine
 wine32
 whois
 xdotool
+xsel
 x-window-system-core
 zsh
