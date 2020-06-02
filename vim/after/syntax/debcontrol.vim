@@ -1,0 +1,1 @@
+syntax keyword debcontrolSection contained univention
