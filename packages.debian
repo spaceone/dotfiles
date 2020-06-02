@@ -118,6 +118,9 @@ python-yaml
 python-mimeparse
 python-tornado
 python-concurrent.futures
+python3-flake8-polyfill
+python3-flake8-docstrings
+python3-pep8-naming
 rdate
 rdesktop
 resolvconf
