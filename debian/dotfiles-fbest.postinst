@@ -1,0 +1,9 @@
+#!/bin/sh
+#DEBHELPER#
+
+while read line; do
+	pip install "$line";
+	pip3 install "$line";
+done < /home/fbest/.templates/packages.pip
+
+exit 0

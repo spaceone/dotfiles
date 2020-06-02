@@ -1,0 +1,22 @@
+#!/usr/bin/dh-exec
+Xdefaults => /home/fbest/.Xdefaults
+Xresources => /home/fbest/.Xresources
+bash.bashrc => /home/fbest/.bashrc
+bash_aliases => /home/fbest/.bash_aliases
+bin/ /home/fbest/
+config/* /home/fbest/.config/
+gitattributes => /home/fbest/.gitattributes
+gitconfig => /home/fbest/.gitconfig
+i3/config => /home/fbest/.i3/config
+i3status.conf => /home/fbest/.i3status.conf
+inputrc => /home/fbest/.inputrc
+packages.pip /home/fbest/.templates/
+pre-push /home/fbest/.templates/
+profile => /home/fbest/.profile
+pylintrc => /home/fbest/.pylintrc
+pythonrc.py => /home/fbest/.pythonrc.py
+screenrc => /home/fbest/.screenrc
+tmux.conf => /home/fbest/.tmux.conf
+vimrc => /home/fbest/.vimrc
+xinitrc => /home/fbest/.xinitrc
+zshrc => /home/fbest/.zshrc
