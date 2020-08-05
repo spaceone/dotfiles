@@ -10,6 +10,7 @@ alias ..='cd ..'
 alias cd.='cd ..'
 alias cd..='cd ..'
 alias …='cd ../..'
+alias ….='cd ../../../'
 alias h='history'
 alias j='jobs -l'
 alias L='less'
@@ -46,7 +47,7 @@ alias histless='history | less'
 alias topu='top -u "$USER"'
 alias ack='ack-grep'
 
-IP=$(/sbin/ifconfig eth0 | awk '/inet / { print $2 }')
+#IP=$(/sbin/ifconfig eth0 | awk '/inet / { print $2 }')
 
 function mkcd () {
   mkdir -p "$1"

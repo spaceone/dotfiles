@@ -18,7 +18,7 @@
 	co = checkout
 	cob = checkout -b
 	pr = pull --rebase
-	bl = "!bl () { ~/git/depot_tools/git_hyper_blame.py $(cat ~/.ignore_blame_commits) \"$@\"; }; bl"
+	bl = "!f(){ ~/git/depot_tools/git_hyper_blame.py --ignore-file ~/.ignore_blame_commits \"$@\";};f"
 
 	diffstat = diff --stat -r
 	# diff
@@ -26,8 +26,8 @@
 	dc = diff --color-words --cached
 	df = diff-index --color-words -p HEAD
 	diffc = diff --cached
-	difff = diff-index -p HEAD
-	#difff = diff --staged
+	#difff = diff-index -p HEAD
+	difff = diff --staged
 
 	# history of a file
 	filelog = log -u
@@ -50,8 +50,9 @@
 	up = svn rebase
 	sci = svn dcommit
 	unisvn = !gcu
+	ffmerge = "!ffmerge () { if [ \"$(git merge-base HEAD \"$1\")\" = \"$(git rev-parse HEAD)\" ]; then git merge --no-ff \"$1\";  else echo >&2 \"Not up to date; refusing to merge\"; return 1; fi; }; ffmerge"
 [push]
-	default = simple
+	default = upstream
 [color]
 	diff = auto
 	ui = auto
@@ -77,4 +78,7 @@
 	cachetextconv = true
 
 [diff "po"]
-	textconv=msgcat --no-location --no-wrap --sort-output
+	#textconv=msgcat --no-location --no-wrap --sort-output
+	textconv=bash -c 'msgcat --no-location --no-wrap --sort-output "$1" || cat "$1"' --
+[diff]
+	#noprefix = true

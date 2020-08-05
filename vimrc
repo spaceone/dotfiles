@@ -76,7 +76,8 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_javascript_checkers = ['jshint']
-let g:syntastic_python_checkers = ['flake8', 'pyflakes', 'pep8']
+let g:syntastic_python_checkers = ['flake8', 'pep8']
+" 'bandit'
 
 " https://github.com/tell-k/vim-autopep8
 let g:autopep8_ignore="E501,W191,E265"
