@@ -44,6 +44,7 @@
 	type = cat-file -t
 	dump = cat-file -p
 	pick = cherry-pick
+	cp = cherry-pick
 	merge = merge --ff-only
 
 	# some git svn commands
@@ -51,6 +52,9 @@
 	sci = svn dcommit
 	unisvn = !gcu
 	ffmerge = "!ffmerge () { if [ \"$(git merge-base HEAD \"$1\")\" = \"$(git rev-parse HEAD)\" ]; then git merge --no-ff \"$1\";  else echo >&2 \"Not up to date; refusing to merge\"; return 1; fi; }; ffmerge"
+	rbs = "!rbs ()  { git show $(< .git/rebase-apply/original-commit); }; rbs"
+	dch= "!dch() { /usr/bin/dch -D unstable -i --no-auto-nmu $(git log HEAD -1 --format='format:%s'); }; dch"
+	fbest = "!fbest() { git branch | grep fbest; }; fbest"
 [push]
 	default = upstream
 [color]
@@ -73,6 +77,10 @@
 	name = debian/changelog merge driver
 	driver = dpkg-mergechangelogs -m %O %A %B %A
 
+[merge "merge-debian-changelog"]
+	name = debian/changelog merge driver
+	driver = ~/git/toolshed/VCS/merge-debian-changelog -vvv %A %B %A
+
 [diff "jpg"]
 	textconv = exif
 	cachetextconv = true
@@ -82,3 +90,4 @@
 	textconv=bash -c 'msgcat --no-location --no-wrap --sort-output "$1" || cat "$1"' --
 [diff]
 	#noprefix = true
+	wsErrorHighlight = all
