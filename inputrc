@@ -1,4 +1,3 @@
-. /etc/inputrc
 # allow M-p M-n M-â†‘ M-â†“ to search history with left-of-cursor as pattern
 "\ep": history-search-backward
 "\en": history-search-forward
