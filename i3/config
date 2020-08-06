@@ -171,8 +171,8 @@ popup_during_fullscreen leave_fullscreen
 
 exec --no-startup-id nm-applet
 exec --no-startup-id kaze
-exec --no-startup-id pascom
-exec --no-startup-id rocketchat-desktop
+#exec --no-startup-id pascom
+#exec --no-startup-id rocketchat-desktop
 exec --no-startup-id xrandr --output DP-1 --left-of eDP-1 --auto --rate 75
 exec --no-startup-id xrandr --output eDP-1 --auto --rate 75
 bindsym --release $mod+Print exec --no-startup-id scrot '%Y-%m-%d$'
