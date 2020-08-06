@@ -1,4 +1,9 @@
 #!/usr/bin/make -f
 
+override_dh_install:
+	sed 's#home/fbest#root#g' debian/dotfiles-fbest.install > debian/dotfiles-ucs-root.install
+	chmod +x debian/dotfiles-ucs-root.install
+	dh_install
+
 %:
 	dh $@

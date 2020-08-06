@@ -1,0 +1,10 @@
+#!/bin/sh
+
+#DEBHELPER#
+
+set -x
+
+ucr set repository/online/unmaintained=yes
+apt update -qq
+
+exit 0

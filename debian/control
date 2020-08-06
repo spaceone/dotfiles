@@ -184,3 +184,21 @@ Recommends:
  xsel,
  zsh,
 Description: personal dotfiles
+
+Package: dotfiles-ucs-root
+Architecture: all
+Depends:
+ debhelper,
+ dh-python,
+ dpkg-dev,
+ python2.7-dev,
+ univention-config-dev,
+ univention-dojo-dev,
+ univention-management-console-dev,
+ python-pip,
+ python3-pip,
+ ${misc:Depends},
+ ${python:Depends},
+Provides:
+ ${python:Provides},
+Description: root dotfiles for an UCS system

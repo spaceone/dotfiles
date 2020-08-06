@@ -52,3 +52,5 @@ docs/_build/
 
 # PyBuilder
 target/
+
+debian/dotfiles-ucs-root.install
