@@ -55,6 +55,7 @@ Recommends:
  git-svn,
  gitk,
  grep,
+ gwenview,
  heimdal-clients,
  i3,
  ifconfig,
@@ -181,6 +182,7 @@ Recommends:
  wine32,
  x-window-system-core,
  xdotool,
+ xsane,
  xsel,
  zsh,
 Description: personal dotfiles
