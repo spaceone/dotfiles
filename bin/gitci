@@ -1,2 +1,2 @@
 #!/bin/bash
-git commit -e -m "$(dpkg-parsechangelog -S Changes | tail -n +4 | sed 's#^\s*##g')" "$@"
+git commit -e -m "$(dpkg-parsechangelog -S Changes | tail -n +4 | sed 's#^\s*\*\s*##g')" "$@"
