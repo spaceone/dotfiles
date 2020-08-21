@@ -1,0 +1,41 @@
+#!/usr/bin/python
+from __future__ import print_function
+
+import glob
+import os.path
+import shutil
+
+
+def main():
+	files = open('debian/dotfiles-fbest.install').readlines()
+	for line in files:
+		if line.startswith('#'):
+			continue
+		try:
+			local, remote = line.strip().split(' => ', 1)
+		except ValueError:
+			local, remote = line.strip().split(' ', 1)
+		copy_files(local, remote)
+
+
+def copy_files(local, remote):
+	if os.path.isfile(local) and os.path.isfile(remote):
+		print('Copying file', local, remote)
+		shutil.copy(remote, local)
+	elif os.path.isfile(local) and os.path.isfile(os.path.join(remote, local)):
+		print('Copying dir/file', local, remote)
+		shutil.copy(os.path.join(remote, local), local)
+	elif os.path.isdir(local):
+		print('Copying directory', local, remote)
+		for local_sub in os.listdir(local):
+			copy_files(os.path.join(local, local_sub), os.path.join(remote, local, local_sub))
+	elif '*' in local and glob.glob(local):
+		print('Copying glob', glob.glob(local), remote)
+		for filename in glob.glob(local):
+			copy_files(filename, os.path.join(remote, os.path.basename(filename)))
+	else:
+		print('Skipping', local, remote)
+
+
+if __name__ == '__main__':
+	main()
