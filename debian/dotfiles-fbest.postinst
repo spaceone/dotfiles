@@ -6,4 +6,60 @@ while read line; do
 	pip3 install "$line";
 done < /home/fbest/.templates/packages.pip
 
+dpkg-statoverride --update --add fbest fbest 0640 /home/fbest/.Xdefaults
+dpkg-statoverride --update --add fbest fbest 0640 /home/fbest/.Xresources
+dpkg-statoverride --update --add fbest fbest 0640 /home/fbest/.bash_aliases
+dpkg-statoverride --update --add fbest fbest 0640 /home/fbest/.bashrc
+dpkg-statoverride --update --add fbest fbest 0640 /home/fbest/.config
+dpkg-statoverride --update --add fbest fbest 0640 /home/fbest/.config/flake8
+dpkg-statoverride --update --add fbest fbest 0640 /home/fbest/.config/pep8
+dpkg-statoverride --update --add fbest fbest 0640 /home/fbest/.config/pycodestyle
+dpkg-statoverride --update --add fbest fbest 0640 /home/fbest/.gitattributes
+dpkg-statoverride --update --add fbest fbest 0640 /home/fbest/.gitconfig
+dpkg-statoverride --update --add fbest fbest 0750 /home/fbest/.i3
+dpkg-statoverride --update --add fbest fbest 0640 /home/fbest/.i3/config
+dpkg-statoverride --update --add fbest fbest 0640 /home/fbest/.i3status.conf
+dpkg-statoverride --update --add fbest fbest 0640 /home/fbest/.inputrc
+dpkg-statoverride --update --add fbest fbest 0640 /home/fbest/.profile
+dpkg-statoverride --update --add fbest fbest 0640 /home/fbest/.pylintrc
+dpkg-statoverride --update --add fbest fbest 0640 /home/fbest/.pythonrc.py
+dpkg-statoverride --update --add fbest fbest 0640 /home/fbest/.screenrc
+dpkg-statoverride --update --add fbest fbest 0640 /home/fbest/.templates
+dpkg-statoverride --update --add fbest fbest 0640 /home/fbest/.templates/packages.pip
+dpkg-statoverride --update --add fbest fbest 0640 /home/fbest/.templates/pre-push
+dpkg-statoverride --update --add fbest fbest 0640 /home/fbest/.tmux.conf
+dpkg-statoverride --update --add fbest fbest 0750 /home/fbest/.vim
+dpkg-statoverride --update --add fbest fbest 0640 /home/fbest/.vim/README.md
+dpkg-statoverride --update --add fbest fbest 0750 /home/fbest/.vim/after
+dpkg-statoverride --update --add fbest fbest 0750 /home/fbest/.vim/after/syntax
+dpkg-statoverride --update --add fbest fbest 0640 /home/fbest/.vim/after/syntax/conf.vim
+dpkg-statoverride --update --add fbest fbest 0640 /home/fbest/.vim/after/syntax/debcontrol.vim
+dpkg-statoverride --update --add fbest fbest 0750 /home/fbest/.vim/autoload
+dpkg-statoverride --update --add fbest fbest 0640 /home/fbest/.vim/autoload/pathogen.vim
+dpkg-statoverride --update --add fbest fbest 0750 /home/fbest/.vim/compiler
+dpkg-statoverride --update --add fbest fbest 0640 /home/fbest/.vim/compiler/pep8.vim
+dpkg-statoverride --update --add fbest fbest 0640 /home/fbest/.vim/compiler/pylint.vim
+dpkg-statoverride --update --add fbest fbest 0750 /home/fbest/.vim/doc
+dpkg-statoverride --update --add fbest fbest 0640 /home/fbest/.vim/doc/supertab.txt
+dpkg-statoverride --update --add fbest fbest 0750 /home/fbest/.vim/doc/tags
+dpkg-statoverride --update --add fbest fbest 0640 /home/fbest/.vim/filetype.vim
+dpkg-statoverride --update --add fbest fbest 0750 /home/fbest/.vim/ftdetect
+dpkg-statoverride --update --add fbest fbest 0640 /home/fbest/.vim/ftdetect/univention-template.vim
+dpkg-statoverride --update --add fbest fbest 0750 /home/fbest/.vim/ftplugin
+dpkg-statoverride --update --add fbest fbest 0640 /home/fbest/.vim/ftplugin/diff.vim
+dpkg-statoverride --update --add fbest fbest 0640 /home/fbest/.vim/ftplugin/univention-template.vim
+dpkg-statoverride --update --add fbest fbest 0750 /home/fbest/.vim/plugin
+dpkg-statoverride --update --add fbest fbest 0640 /home/fbest/.vim/plugin/supertab.vim
+dpkg-statoverride --update --add fbest fbest 0640 /home/fbest/.vim/plugin/vsearch.vim
+dpkg-statoverride --update --add fbest fbest 0750 /home/fbest/.vim/syntax
+dpkg-statoverride --update --add fbest fbest 0640 /home/fbest/.vim/syntax/ldap_schema.vim
+dpkg-statoverride --update --add fbest fbest 0640 /home/fbest/.vim/syntax/ucsucr.vim
+dpkg-statoverride --update --add fbest fbest 0640 /home/fbest/.vim/syntax/univention-template.vim
+dpkg-statoverride --update --add fbest fbest 0640 /home/fbest/.vim/vsearch.vim
+dpkg-statoverride --update --add fbest fbest 0640 /home/fbest/.vimrc
+dpkg-statoverride --update --add fbest fbest 0640 /home/fbest/.xinitrc
+dpkg-statoverride --update --add fbest fbest 0640 /home/fbest/.zshrc
+dpkg-statoverride --update --add fbest fbest 0750 /home/fbest/bin/gitci
+dpkg-statoverride --update --add fbest fbest 0750 /home/fbest/bin/gitlint
+
 exit 0
