@@ -91,3 +91,4 @@
 [diff]
 	#noprefix = true
 	wsErrorHighlight = all
+	statGraphWidth = 999
