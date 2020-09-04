@@ -21,3 +21,6 @@ tmux.conf => /home/fbest/.tmux.conf
 vimrc => /home/fbest/.vimrc
 xinitrc => /home/fbest/.xinitrc
 zshrc => /home/fbest/.zshrc
+site-packages/ /home/fbest/.local/lib/python2.7/
+site-packages/ /home/fbest/.local/lib/python3.5/
+site-packages/ /home/fbest/.local/lib/python3.7/
