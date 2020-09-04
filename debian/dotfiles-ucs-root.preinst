@@ -7,4 +7,9 @@ set -x
 ucr set repository/online/unmaintained=yes
 apt update -qq
 
+ucr set saml/idp/log/level=DEBUG \
+	saml/idp/log/debug/enabled=true \
+	umc/{server,module}/debug/level=4 \
+	directory/manager/{cmd,rest}/debug/level=4
+
 exit 0
