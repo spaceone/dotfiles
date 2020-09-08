@@ -19,6 +19,7 @@ Provides:
 Recommends:
  ark,
  autopep8,
+ bugzilla-cli,
  cheese,
  chromium,
  chromium-browser,
