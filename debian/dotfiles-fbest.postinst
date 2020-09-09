@@ -6,6 +6,8 @@ while read line; do
 	pip3 install "$line";
 done < /home/fbest/.templates/packages.pip
 
+npm install --global git-po-merge
+
 dpkg-statoverride --update --add fbest fbest 0640 /home/fbest/.Xdefaults
 dpkg-statoverride --update --add fbest fbest 0640 /home/fbest/.Xresources
 dpkg-statoverride --update --add fbest fbest 0640 /home/fbest/.bash_aliases
