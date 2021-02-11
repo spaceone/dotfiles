@@ -87,3 +87,12 @@ let g:autopep8_ignore="E501,W191,E265"
 let g:pymode_lint_ignore="E501,W191,E265"
 
 " supertab: http://www.vim.org/scripts/script.php?script_id=1643
+
+let g:ucr_template_autofold=2
+augroup ucr-template_filetype
+  autocmd!
+  autocmd FileType ucr-template nnoremap <buffer> <F5> :UCRSectionToPython2<CR>
+  autocmd FileType ucr-template nnoremap <buffer> <F6> :UCRSectionToPython3<CR>
+  autocmd FileType ucr-template nnoremap <buffer> <F9> :UCRSectionDiffPython<CR>
+  autocmd FileType ucr-template nnoremap <buffer> <F8> :UCRSectionPreview<CR>
+augroup END
