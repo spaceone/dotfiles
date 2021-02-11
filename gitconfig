@@ -55,6 +55,10 @@
 	rbs = "!rbs ()  { git show $(< .git/rebase-apply/original-commit); }; rbs"
 	dch= "!dch() { /usr/bin/dch -D unstable -i --no-auto-nmu $(git log HEAD -1 --format='format:%s'); }; dch"
 	fbest = "!fbest() { git branch | grep fbest; }; fbest"
+	rba = rebase --abort
+	rbc = rebase --continue
+	rb = rebase --autosquash -i
+	cpc = cherry-pick --continue
 [push]
 	default = upstream
 [color]
@@ -79,7 +83,7 @@
 
 [merge "merge-debian-changelog"]
 	name = debian/changelog merge driver
-	driver = ~/git/toolshed/VCS/merge-debian-changelog -vvv %A %B %A
+	driver = ~/git/toolshed/VCS/merge-debian-changelog -vvv --preserve %A %B %A
 
 [diff "jpg"]
 	textconv = exif
@@ -89,6 +93,8 @@
 	#textconv=msgcat --no-location --no-wrap --sort-output
 	textconv=bash -c 'msgcat --no-location --no-wrap --sort-output "$1" || cat "$1"' --
 [diff]
-	#noprefix = true
+	noprefix = true
 	wsErrorHighlight = all
 	statGraphWidth = 999
+#[branch]
+#	autosetupmerge = always
