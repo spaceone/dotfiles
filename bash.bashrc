@@ -1,7 +1,7 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-export PATH=$PATH:/usr/sbin:/usr/local/sbin:/sbin
+export PATH=$PATH:~/.local/bin:/usr/sbin:/usr/local/sbin:/sbin
 
 [ -d ~/.bin_overwrite ] && export PATH="~/.bin_overwrite:$PATH";
 
