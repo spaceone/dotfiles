@@ -17,6 +17,7 @@ Depends:
 Provides:
  ${python:Provides},
 Recommends:
+ adb,
  ark,
  autopep8,
  bugzilla-cli,
