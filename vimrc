@@ -73,6 +73,9 @@ set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
+nnoremap <silent> <F8> :set mouse= \| set nolist \| set nonumber<CR>
+nnoremap <silent> <F9> :set mouse= \| set list \| set number<CR>
+
 nnoremap <silent> <F7> :SyntasticToggleMode<CR>
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
