@@ -40,3 +40,6 @@ URxvt.color7  : #B2B2B2
 URxvt.color15 : #FFFFFF
 
 URxvt.geometry: 209x70
+
+xterm*dynamicColors: true
+urxvt*dynamicColors: on
