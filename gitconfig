@@ -59,6 +59,8 @@
 	rbc = rebase --continue
 	rb = rebase --autosquash -i
 	cpc = cherry-pick --continue
+	cl = "!f() { git log --format=format:\"[$(git describe --contains --all HEAD)] %C(auto)%h %s\" --stat=${COLUMNS:-100},,10 \"${@:--1}\";};f"
+	c = "!c() { git commit -e -m \"$(dpkg-parsechangelog -l ${GIT_PREFIX:-.}/debian/changelog -S Changes | tail -n +4 | sed 's/^\\s*\\*\\s*//g')\" \"$@\";};c"
 [push]
 	default = upstream
 [color]
@@ -98,3 +100,5 @@
 	statGraphWidth = 999
 #[branch]
 #	autosetupmerge = always
+[init]
+	defaultBranch = main
