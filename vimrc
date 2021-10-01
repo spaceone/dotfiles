@@ -43,8 +43,10 @@ if $LANG =~ ".*\.UTF-8$" || $LANG =~ ".*utf8$" || $LANG =~ ".*utf-8$"
 	endtry
 endif
 let g:indentLine_enabled = 1
-let g:indentLine_char = '›'
-let g:indentLine_color_term = 34
+let g:indentLine_char = '»'
+let g:indentLine_first_char = '»'
+let g:indentLine_showFirstIndentLevel = 1
+let g:indentLine_defaultGroup = 'SpecialKey'
 
 set foldmethod=indent
 set foldlevel=99
