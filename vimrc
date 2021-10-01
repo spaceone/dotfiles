@@ -77,16 +77,17 @@ nnoremap <silent> <F8> :set mouse= \| set nolist \| set nonumber<CR>
 nnoremap <silent> <F9> :set mouse= \| set list \| set number<CR>
 
 nnoremap <silent> <F7> :SyntasticToggleMode<CR>
+let g:syntastic_aggregate_errors = 1
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_javascript_checkers = ['jshint']
-"let g:syntastic_python_checkers = ['flake8']
-let g:syntastic_python_checkers = ['flake8', 'pep8']
+let g:syntastic_python_checkers = ['flake8', 'pycodestyle', 'pyflakes']
+" 'pydocstyle', 'bandit'
+"let g:syntastic_python_checkers = ['ucspep8']
 let g:syntastic_sh_checkers = ['shellcheck']
 let g:syntastic_sh_shellcheck_args = ['--external-sources']
-" 'bandit'
 
 " https://github.com/tell-k/vim-autopep8
 let g:autopep8_ignore="E501,W191,E265"
