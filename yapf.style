@@ -1,0 +1,33 @@
+[style]
+based_on_style=pep8
+use_tabs=True
+column_limit = 200
+
+# nested dicts aren't correctly indented with FIXED (one too few), https://github.com/google/yapf/issues/968
+# absoluteley necessary for tab indentation! (https://github.com/google/yapf/issues/967)
+continuation_align_style=VALIGN-RIGHT
+
+blank_line_before_nested_class_or_def=True
+align_closing_bracket_with_visual_indent=False
+dedent_closing_brackets=True
+coalesce_brackets=True
+indent_closing_brackets=False
+space_between_ending_comma_and_closing_bracket=False
+
+# unsure?! https://github.com/google/yapf/issues/547
+indent_dictionary_value=False
+join_multiple_lines=True
+split_penalty_excess_character=0
+split_complex_comprehension=True
+split_penalty_after_opening_bracket=0
+split_penalty_comprehension=0
+split_penalty_before_if_expr=1000
+split_penalty_for_added_line_split=0
+split_before_logical_operator=False
+split_before_bitwise_operator=False
+
+# causes no new line for each dict entry :-( https://github.com/google/yapf/issues/833
+# split_all_top_level_comma_separated_values=True
+split_before_first_argument=True
+force_multiline_dict=True
+each_dict_entry_on_separate_line=True

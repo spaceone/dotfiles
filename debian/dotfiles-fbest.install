@@ -24,3 +24,4 @@ zshrc => /home/fbest/.zshrc
 site-packages/ /home/fbest/.local/lib/python2.7/
 site-packages/ /home/fbest/.local/lib/python3.5/
 site-packages/ /home/fbest/.local/lib/python3.7/
+yapf.style => /home/fbest/.config/yapf/style
