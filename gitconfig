@@ -2,6 +2,7 @@
 	name = SpaceOne
 	email = space@wechall.net
 [alias]
+	a = commit --amend
 	st = status
 	ci = commit
 	ca = commit -a
@@ -68,6 +69,7 @@
 	ui = auto
 [core]
 	pager = less -FSRX
+	# pager = delta
 	editor = /usr/bin/vim
 	attributesfile = ~/.gitattributes
 
