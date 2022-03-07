@@ -1,9 +1,9 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-export PATH=$PATH:~/.local/bin:/usr/sbin:/usr/local/sbin:/sbin
+export PATH="~/.local/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games:/usr/sbin:/usr/local/sbin:/sbin"
 
-[ -d ~/.bin_overwrite ] && export PATH="~/.bin_overwrite:$PATH";
+[ -d ~/.bin_overwrite ] && export PATH="~/.bin_overwrite:$PATH"
 
 export EDITOR='vim'
 export LANG='de_DE.UTF-8'
