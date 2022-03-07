@@ -5,6 +5,8 @@ colorscheme delek
 
 au BufNewFile,BufRead *.styl set filetype=css
 
+set tabpagemax=30
+
 set incsearch
 set hlsearch
 
@@ -43,6 +45,7 @@ if $LANG =~ ".*\.UTF-8$" || $LANG =~ ".*utf8$" || $LANG =~ ".*utf-8$"
 	endtry
 endif
 let g:indentLine_enabled = 1
+let g:indentLine_enabled = 0
 let g:indentLine_char = '»'
 let g:indentLine_first_char = '»'
 let g:indentLine_showFirstIndentLevel = 1
@@ -84,12 +87,15 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
-let g:syntastic_javascript_checkers = ['jshint']
+" let g:syntastic_javascript_checkers = ['jslint', 'eslint']
+let g:syntastic_javascript_checkers = ['eslint']
 let g:syntastic_python_checkers = ['flake8', 'pycodestyle', 'pyflakes']
-" 'pydocstyle', 'bandit'
-"let g:syntastic_python_checkers = ['ucspep8']
+"let g:syntastic_python_flake8_args = ['--ignore', 'I,W191']
+", 'bandit']
+"let g:syntastic_python_checkers = ['ucspep8']  # pydocstyle
 let g:syntastic_sh_checkers = ['shellcheck']
 let g:syntastic_sh_shellcheck_args = ['--external-sources']
+" 'bandit'
 
 " https://github.com/tell-k/vim-autopep8
 let g:autopep8_ignore="E501,W191,E265"
@@ -105,3 +111,13 @@ augroup ucr-template_filetype
   autocmd FileType ucr-template nnoremap <buffer> <F9> :UCRSectionDiffPython<CR>
   autocmd FileType ucr-template nnoremap <buffer> <F8> :UCRSectionPreview<CR>
 augroup END
+
+function! Ef()
+  write
+  execute "!PYTHONPATH=/home/fbest/git2/repo-ng/src python -m univention.repong.errata format --wrap=80 -s -i " . bufname("%")
+  edit
+endfunction
+
+let g:DiffUnit="Word1"
+
+autocmd FileType typescript setlocal formatprg=prettier\ --parser\ typescript
