@@ -3,6 +3,7 @@
 	email = space@wechall.net
 [alias]
 	a = commit --amend
+	aa = commit --amend -a
 	st = status
 	ci = commit
 	ca = commit -a
