@@ -2,9 +2,9 @@
 	name = SpaceOne
 	email = space@wechall.net
 [alias]
+	fixup=commit --fixup
 	a = commit --amend
 	aa = commit --amend -a
-	st = status
 	ci = commit
 	ca = commit -a
 	ciclg = !gitci
@@ -14,6 +14,10 @@
 	sp = stash pop
 	ed = branch --edit-description
 	f = commit --ammend
+
+	st = status -s --untracked-files=all
+	std = status -s --untracked-files=normal
+	stn = status -s --untracked-files=no
 
 	# branches
 	b = branch
@@ -30,6 +34,10 @@
 	diffc = diff --cached
 	#difff = diff-index -p HEAD
 	difff = diff --staged
+	cdiff = diff --color-words=.
+	wdiff = diff --word-diff=color
+	clog = log -p --color-words=.
+	wlog = log -p --word-diff=color
 
 	# history of a file
 	filelog = log -u
@@ -63,6 +71,10 @@
 	cpc = cherry-pick --continue
 	cl = "!f() { git log --format=format:\"[$(git describe --contains --all HEAD)] %C(auto)%h %s\" --stat=${COLUMNS:-100},,10 \"${@:--1}\";};f"
 	c = "!c() { git commit -e -m \"$(dpkg-parsechangelog -l ${GIT_PREFIX:-.}/debian/changelog -S Changes | tail -n +4 | sed 's/^\\s*\\*\\s*//g')\" \"$@\";};c"
+
+	# mwp = "!f() { git push -o merge_request.create -o merge_request.target=\"$(git rev-parse --abbrev-ref \"@{u}\"|cut -d/ -f2-)\" -o merge_request.remove_source_branch \"$@\";};f"
+	# mwps = "!f() { git push -o merge_request.create -o merge_request.target=\"$(git rev-parse --abbrev-ref \"@{u}\"|cut -d/ -f2-)\" -o merge_request.remove_source_branch -o merge_request.merge_when_pipeline_succeeds \"$@\";};f"
+
 [push]
 	default = upstream
 [color]
