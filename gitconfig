@@ -72,8 +72,12 @@
 	cl = "!f() { git log --format=format:\"[$(git describe --contains --all HEAD)] %C(auto)%h %s\" --stat=${COLUMNS:-100},,10 \"${@:--1}\";};f"
 	c = "!c() { git commit -e -m \"$(dpkg-parsechangelog -l ${GIT_PREFIX:-.}/debian/changelog -S Changes | tail -n +4 | sed 's/^\\s*\\*\\s*//g')\" \"$@\";};c"
 
-	# mwp = "!f() { git push -o merge_request.create -o merge_request.target=\"$(git rev-parse --abbrev-ref \"@{u}\"|cut -d/ -f2-)\" -o merge_request.remove_source_branch \"$@\";};f"
-	# mwps = "!f() { git push -o merge_request.create -o merge_request.target=\"$(git rev-parse --abbrev-ref \"@{u}\"|cut -d/ -f2-)\" -o merge_request.remove_source_branch -o merge_request.merge_when_pipeline_succeeds \"$@\";};f"
+	mwp = "!f() { git push -o merge_request.create -o merge_request.description=\"See bugzilla\" -o merge_request.target=\"$(git rev-parse --abbrev-ref \"@{u}\"|cut -d/ -f2-)\" -o merge_request.remove_source_branch \"$@\";};f"
+	mwps = "!f() { git push -o merge_request.create -o merge_request.target=\"$(git rev-parse --abbrev-ref \"@{u}\"|cut -d/ -f2-)\" -o merge_request.remove_source_branch -o merge_request.merge_when_pipeline_succeeds \"$@\";};f"
+
+	yaml = "!f() { git ci -m \"$(printf \"chore(advisory): YAML\n\nBug #$1\")\" $2; };f"
+	cup= "!f() { git range-diff \"$(git rev-parse --abbrev-ref --symbolic-full-name @{u})\"...@; };f"
+	cupp= "!f() { git diff \"$(git rev-parse --abbrev-ref --symbolic-full-name @{u})\"..@ \"$@\"; };f"
 
 [push]
 	default = upstream
@@ -108,7 +112,7 @@
 
 [diff "po"]
 	#textconv=msgcat --no-location --no-wrap --sort-output
-	textconv=bash -c 'msgcat --no-location --no-wrap --sort-output "$1" || cat "$1"' --
+	textconv=bash -c 'msgcat --no-location --no-wrap --sort-output "$1" 2>/dev/null || cat "$1"' --
 [diff]
 	noprefix = true
 	wsErrorHighlight = all
