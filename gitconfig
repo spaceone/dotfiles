@@ -78,6 +78,9 @@
 	yaml = "!f() { git ci -m \"$(printf \"chore(advisory): YAML\n\nBug #$1\")\" $2; };f"
 	cup= "!f() { git range-diff \"$(git rev-parse --abbrev-ref --symbolic-full-name @{u})\"...@; };f"
 	cupp= "!f() { git diff \"$(git rev-parse --abbrev-ref --symbolic-full-name @{u})\"..@ \"$@\"; };f"
+	dp= "!f() { git diff \"$@\" --name-only | sed 's#^\\([^/]*/[^/]*\\)/.*#\\1#g' | sort -u | while read line; do [ -d \"$line/debian/\" ] && echo -n \"$line \"; done; };f"
+
+	fat=commit -a --fixup=@
 
 [push]
 	default = upstream
