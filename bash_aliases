@@ -22,6 +22,7 @@ alias cl='clear; ls'
 alias du='du -kh'
 alias df='df --si -kThlx tmpfs'
 
+alias v='vim -p'
 alias vi='vim'
 alias diff='diff -u'
 alias dch='dch -i --no-auto-nmu'
