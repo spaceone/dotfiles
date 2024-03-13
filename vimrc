@@ -4,6 +4,7 @@ syntax on
 colorscheme delek
 
 au BufNewFile,BufRead *.styl set filetype=css
+au BufNewFile,BufRead ~/git2/ucs/doc/errata/* set tabstop=3 shiftwidth=3 textwidth=80 colorcolumn=+1`
 
 set tabpagemax=30
 
@@ -14,19 +15,24 @@ set nocompatible
 
 set encoding=utf8
 
-set noexpandtab
+" set noexpandtab
 set copyindent
 set preserveindent
 set softtabstop=0
 set shiftwidth=4
 set tabstop=4
 
+" space indent:
+set softtabstop=4
+set expandtab
+"remove smarttab
+
 set autoindent
 set si "Smart indent
 set wrap "Wrap lines
 
 " Be smart when using tabs ;)
-set smarttab
+" set smarttab
 
 " When searching try to be smart about cases
 set smartcase
@@ -39,7 +45,8 @@ set pastetoggle=<F2>
 
 if $LANG =~ ".*\.UTF-8$" || $LANG =~ ".*utf8$" || $LANG =~ ".*utf-8$"
 	try
-		set listchars=tab:»\ ,trail:·,precedes:…,extends:…
+		"set listchars=tab:»\ ,trail:·,precedes:…,extends:…
+		set listchars=tab:›\ ,trail:·,precedes:…,extends:…
 		set list
 	catch
 	endtry
@@ -73,29 +80,53 @@ let g:python_recommended_style=0
 " syntax checks using syntastics
 execute pathogen#infect()
 
+function! LinterStatus() abort
+    let l:counts = ale#statusline#Count(bufnr(''))
+
+    let l:all_errors = l:counts.error + l:counts.style_error
+    let l:all_non_errors = l:counts.total - l:all_errors
+
+    return l:counts.total == 0 ? 'OK' : printf(
+    \   '%dW %dE',
+    \   all_non_errors,
+    \   all_errors
+    \)
+endfunction
+
 " https://github.com/vim-syntastic/syntastic
 set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
+" syntastics linter:
+"set statusline+=%{SyntasticStatuslineFlag()}
+" ALE linter:
+set statusline+=%{LinterStatus()}
 set statusline+=%*
 
 nnoremap <silent> <F8> :set mouse= \| set nolist \| set nonumber<CR>
 nnoremap <silent> <F9> :set mouse= \| set list \| set number<CR>
 
-nnoremap <silent> <F7> :SyntasticToggleMode<CR>
-let g:syntastic_aggregate_errors = 1
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-" let g:syntastic_javascript_checkers = ['jslint', 'eslint']
-let g:syntastic_javascript_checkers = ['eslint']
-let g:syntastic_python_checkers = ['flake8', 'pycodestyle', 'pyflakes']
+"nnoremap <silent> <F7> :SyntasticToggleMode<CR>
+let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes':   [],'passive_filetypes': [] }
+nnoremap <silent> <F7> :ALEToggle<CR>
+nnoremap <silent> <F9> :ALEFix<CR>
+"let g:syntastic_aggregate_errors = 1
+"let g:syntastic_always_populate_loc_list = 1
+"let g:syntastic_auto_loc_list = 1
+""let g:syntastic_check_on_open = 1
+"let g:syntastic_check_on_wq = 0
+"" let g:syntastic_javascript_checkers = ['jslint', 'eslint']
+"let g:syntastic_javascript_checkers = ['eslint']
+"let g:syntastic_python_checkers = ['flake8', 'pycodestyle', 'pyflakes']
 "let g:syntastic_python_flake8_args = ['--ignore', 'I,W191']
 ", 'bandit']
 "let g:syntastic_python_checkers = ['ucspep8']  # pydocstyle
 let g:syntastic_sh_checkers = ['shellcheck']
 let g:syntastic_sh_shellcheck_args = ['--external-sources']
 " 'bandit'
+
+let g:ale_lint_on_text_changed = 'never'
+let g:ale_lint_on_insert_leave = 0
+let g:ale_list_window_size=14
+let g:ale_open_list=1
 
 " https://github.com/tell-k/vim-autopep8
 let g:autopep8_ignore="E501,W191,E265"
