@@ -169,8 +169,8 @@ bar {
 
 popup_during_fullscreen leave_fullscreen
 
-exec --no-startup-id nm-applet
-exec --no-startup-id kaze
+exec --no-startup-id nm-applet --indicator
+#exec --no-startup-id kaze
 #exec --no-startup-id pascom
 #exec --no-startup-id rocketchat-desktop
 exec --no-startup-id xrandr --output DP-1 --left-of eDP-1 --auto --rate 75
@@ -192,3 +192,6 @@ mode "$mode_system" {
     bindsym Escape mode "default"
 }
 bindsym $mod+Pause mode "$mode_system"
+
+bindsym $mod+Shift+question move scratchpad
+bindsym $mod+question exec i3-input -F '[title="(?i)%s"] scratchpad show'
