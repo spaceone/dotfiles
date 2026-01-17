@@ -6,6 +6,7 @@ bash_aliases => /home/fbest/.bash_aliases
 bin/ /home/fbest/
 config/* /home/fbest/.config/
 vim/* /home/fbest/.vim/
+foot/ /home/fbest/.config/
 gitattributes => /home/fbest/.gitattributes
 gitconfig => /home/fbest/.gitconfig
 i3/config => /home/fbest/.i3/config

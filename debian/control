@@ -183,6 +183,7 @@ Recommends:
  whois,
  wine,
  wine32,
+ wl-clipboard,
  x-window-system-core,
  xdotool,
  xsane,
