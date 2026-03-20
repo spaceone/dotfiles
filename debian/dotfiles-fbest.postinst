@@ -14,8 +14,7 @@ case "$1" in
 esac
 
 while read line; do
-	pip install "$line";
-	pip3 install "$line";
+	pip3 install --break-system-packages "$line";
 done < /home/fbest/.templates/packages.pip
 
 npm install --global git-po-merge
