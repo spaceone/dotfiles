@@ -14,6 +14,13 @@
 	sp = stash pop
 	ed = branch --edit-description
 	f = commit --ammend
+	tf = "!f() { \
+		FILE=\"$1\"; \
+		if [ -z \"$FILE\" ]; then echo 'Usage: git tipfix <file>'; exit 1; fi; \
+		COMMIT=$(git log -n 1 --pretty=format:%H -- \"$FILE\"); \
+		git commit --fixup=\"$COMMIT\" \"$@\"; \
+	}; f"  # tip fixup
+
 
 	st = status -s --untracked-files=all
 	std = status -s --untracked-files=normal
@@ -80,6 +87,7 @@
 	cupp= "!f() { git diff \"$(git rev-parse --abbrev-ref --symbolic-full-name @{u})\"..@ \"$@\"; };f"
 	dp= "!f() { git diff \"$@\" --name-only | sed 's#^\\([^/]*/[^/]*\\)/.*#\\1#g' | sort -u | while read line; do [ -d \"$line/debian/\" ] && echo -n \"$line \"; done; };f"
 	clg = "!f() { git rebase --exec \"$(bash -c 'command -v git-commit-filter-auto-dch')\" \"$@\"; };f"
+	apt = "!f() { deb -b \"$(git rev-parse --abbrev-ref HEAD)\"; };f"
 
 	fat=commit -a --fixup=@
 
