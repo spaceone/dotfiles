@@ -22,5 +22,6 @@ tmux.conf => /home/fbest/.dotfiles/.tmux.conf
 vimrc => /home/fbest/.dotfiles/.vimrc
 xinitrc => /home/fbest/.dotfiles/.xinitrc
 zshrc => /home/fbest/.dotfiles/.zshrc
-site-packages/ /home/fbest/.dotfiles/.local/lib/python3.11/
+site-packages/ /home/fbest/.dotfiles/.local/lib/python3.13/
+site-packages/ /home/fbest/.dotfiles/.local/lib/python3.14/
 yapf.style => /home/fbest/.dotfiles/.config/yapf/style
