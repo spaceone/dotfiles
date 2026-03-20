@@ -9,8 +9,22 @@ export EDITOR='vim'
 export LANG='de_DE.UTF-8'
 export PAGER='less'
 [ -e ~/.pythonrc.py ] && export PYTHONSTARTUP=$HOME/.pythonrc.py
-export GREP_COLOR='1;32'
+export GREP_COLORS='mt=1;32'
 PROMPT_COMMAND='history -a' # write out history after each command
+
+# foot jump between command prompts
+prompt_marker() {
+    printf '\e]133;A\e\\'
+}
+PROMPT_COMMAND=${PROMPT_COMMAND:+$PROMPT_COMMAND; }prompt_marker
+
+# foot pipe command output
+PS0+='\e]133;C\e\\'
+
+command_done() {
+    printf '\e]133;D\e\\'
+}
+PROMPT_COMMAND=${PROMPT_COMMAND:+$PROMPT_COMMAND; }command_done
 
 GLOBIGNORE=".svn"
 HISTCONTROL='ignorespace:erasedups'
@@ -64,3 +78,6 @@ fi
 PS2='> '
 PS3='> '
 PS4='+ '
+# . "$HOME/.cargo/env"
+
+export PATH="$(echo "$PATH" | sed "s|~|$HOME|g")"
