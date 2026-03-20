@@ -9,6 +9,7 @@ import shutil
 def main():
 	files = open('debian/dotfiles-fbest.install').readlines()
 	for line in files:
+		line = line.replace('.dotfiles/', '')
 		if line.startswith('#'):
 			continue
 		try:

@@ -1,26 +1,26 @@
 #!/usr/bin/dh-exec
-Xdefaults => /home/fbest/.Xdefaults
-Xresources => /home/fbest/.Xresources
-bash.bashrc => /home/fbest/.bashrc
-bash_aliases => /home/fbest/.bash_aliases
-bin/ /home/fbest/
-config/* /home/fbest/.config/
-vim/* /home/fbest/.vim/
-foot/ /home/fbest/.config/
-gitattributes => /home/fbest/.gitattributes
-gitconfig => /home/fbest/.gitconfig
-i3/config => /home/fbest/.i3/config
-i3status.conf => /home/fbest/.i3status.conf
-inputrc => /home/fbest/.inputrc
-packages.pip /home/fbest/.templates/
-pre-push /home/fbest/.templates/
-profile => /home/fbest/.profile
-pylintrc => /home/fbest/.pylintrc
-pythonrc.py => /home/fbest/.pythonrc.py
-screenrc => /home/fbest/.screenrc
-tmux.conf => /home/fbest/.tmux.conf
-vimrc => /home/fbest/.vimrc
-xinitrc => /home/fbest/.xinitrc
-zshrc => /home/fbest/.zshrc
-site-packages/ /home/fbest/.local/lib/python3.11/
-yapf.style => /home/fbest/.config/yapf/style
+Xdefaults => /home/fbest/.dotfiles/.Xdefaults
+Xresources => /home/fbest/.dotfiles/.Xresources
+bash.bashrc => /home/fbest/.dotfiles/.bashrc
+bash_aliases => /home/fbest/.dotfiles/.bash_aliases
+bin/ /home/fbest/.dotfiles/
+config/* /home/fbest/.dotfiles/.config/
+vim/* /home/fbest/.dotfiles/.vim/
+foot/ /home/fbest/.dotfiles/.config/
+gitattributes => /home/fbest/.dotfiles/.gitattributes
+gitconfig => /home/fbest/.dotfiles/.gitconfig
+i3/config => /home/fbest/.dotfiles/.i3/config
+i3status.conf => /home/fbest/.dotfiles/.i3status.conf
+inputrc => /home/fbest/.dotfiles/.inputrc
+packages.pip /home/fbest/.dotfiles/.templates/
+pre-push /home/fbest/.dotfiles/.templates/
+profile => /home/fbest/.dotfiles/.profile
+pylintrc => /home/fbest/.dotfiles/.pylintrc
+pythonrc.py => /home/fbest/.dotfiles/.pythonrc.py
+screenrc => /home/fbest/.dotfiles/.screenrc
+tmux.conf => /home/fbest/.dotfiles/.tmux.conf
+vimrc => /home/fbest/.dotfiles/.vimrc
+xinitrc => /home/fbest/.dotfiles/.xinitrc
+zshrc => /home/fbest/.dotfiles/.zshrc
+site-packages/ /home/fbest/.dotfiles/.local/lib/python3.11/
+yapf.style => /home/fbest/.dotfiles/.config/yapf/style
