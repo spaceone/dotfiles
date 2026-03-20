@@ -1,10 +1,12 @@
+highlight TabLineSel ctermfg=white gui=bold
+
 filetype plugin on
 filetype indent on
 syntax on
 colorscheme delek
 
 au BufNewFile,BufRead *.styl set filetype=css
-au BufNewFile,BufRead ~/git2/ucs/doc/errata/* set tabstop=3 shiftwidth=3 textwidth=80 colorcolumn=+1`
+au BufNewFile,BufRead ~/git2/ucs/doc/errata/* setlocal tabstop=3 shiftwidth=3 textwidth=80 colorcolumn=81
 
 set tabpagemax=30
 
@@ -22,17 +24,12 @@ set softtabstop=0
 set shiftwidth=4
 set tabstop=4
 
-" space indent:
-set softtabstop=4
-set expandtab
-"remove smarttab
-
 set autoindent
 set si "Smart indent
 set wrap "Wrap lines
 
 " Be smart when using tabs ;)
-" set smarttab
+set smarttab
 
 " When searching try to be smart about cases
 set smartcase
@@ -108,6 +105,7 @@ nnoremap <silent> <F9> :set mouse= \| set list \| set number<CR>
 let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes':   [],'passive_filetypes': [] }
 nnoremap <silent> <F7> :ALEToggle<CR>
 nnoremap <silent> <F9> :ALEFix<CR>
+nnoremap <F10> :w<CR>:!ruff format %<CR>:edit!<CR>
 "let g:syntastic_aggregate_errors = 1
 "let g:syntastic_always_populate_loc_list = 1
 "let g:syntastic_auto_loc_list = 1
@@ -145,7 +143,7 @@ augroup END
 
 function! Ef()
   write
-  execute "!PYTHONPATH=/home/fbest/git2/repo-ng/src python -m univention.repong.errata format --wrap=80 -s -i " . bufname("%")
+  execute "!PYTHONPATH=/home/fbest/git/univention/dev/internal/repo-ng/src python3 -m univention.repong.errata format --wrap=80 -s -i " . bufname("%")
   edit
 endfunction
 
