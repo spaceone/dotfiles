@@ -1,3 +1,4 @@
-python-jenkins
-pyrasite
-youtube-dl
+# python-jenkins
+# pyrasite
+yt-dlp
+ruff
