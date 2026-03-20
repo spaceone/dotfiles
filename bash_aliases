@@ -1,5 +1,4 @@
 #!/bin/bash
-
 alias mv='mv -vi'
 alias cp='cp -vi'
 alias rm='rm -vi'
@@ -23,6 +22,8 @@ alias du='du -kh'
 alias df='df --si -kThlx tmpfs'
 
 alias v='vim -p'
+# shellcheck disable=SC2046
+vl() { vim -p $(fc -s); }
 alias vi='vim'
 alias diff='diff -u'
 alias dch='dch -i --no-auto-nmu'
@@ -48,9 +49,11 @@ alias histless='history | less'
 alias topu='top -u "$USER"'
 alias ack='ack-grep'
 
+alias secretd="jq '.data | map_values(@base64d)'"
+
 #IP=$(/sbin/ifconfig eth0 | awk '/inet / { print $2 }')
 
 function mkcd () {
   mkdir -p "$1"
-  cd "$1"
+  cd "$1" || return
 }
