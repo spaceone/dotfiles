@@ -18,6 +18,7 @@ profile => /home/fbest/.dotfiles/.profile
 pylintrc => /home/fbest/.dotfiles/.pylintrc
 pythonrc.py => /home/fbest/.dotfiles/.pythonrc.py
 screenrc => /home/fbest/.dotfiles/.screenrc
+sway/config => /home/fbest/.dotfiles/.config/sway/
 tmux.conf => /home/fbest/.dotfiles/.tmux.conf
 vimrc => /home/fbest/.dotfiles/.vimrc
 xinitrc => /home/fbest/.dotfiles/.xinitrc
