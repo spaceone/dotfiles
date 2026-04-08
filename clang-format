@@ -1,0 +1,32 @@
+---
+BasedOnStyle: LLVM
+TabWidth: 8
+UseTab: ForIndentation
+IndentWidth: 8
+AlignEscapedNewlinesLeft: true
+# AlignOperands: true
+---
+Language: Cpp
+AlignTrailingComments: true
+AllowShortBlocksOnASingleLine: false
+AllowShortFunctionsOnASingleLine: false
+AllowShortIfStatementsOnASingleLine: false
+BreakBeforeBinaryOperators: false
+BreakBeforeBraces: Attach
+BreakBeforeTernaryOperators: false
+ConstructorInitializerAllOnOneLineOrOnePerLine: false
+IndentWidth: 8
+MaxEmptyLinesToKeep: 2
+SortIncludes: false
+SpaceBeforeParens: ControlStatements
+SpaceInEmptyParentheses: false
+SpacesBeforeTrailingComments: 2
+SpacesInCStyleCastParentheses: false
+SpacesInParentheses: false
+# SpacesInSquareBrackets: false
+ColumnLimit: 220
+KeepEmptyLinesAtTheStartOfBlocks: false
+IndentCaseLabels: false
+---
+# Language: JavaScipt
+# ColumnLimit: 100

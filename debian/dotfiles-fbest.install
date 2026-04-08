@@ -4,6 +4,7 @@ Xresources => /home/fbest/.dotfiles/.Xresources
 bash.bashrc => /home/fbest/.dotfiles/.bashrc
 bash_aliases => /home/fbest/.dotfiles/.bash_aliases
 bin/ /home/fbest/.dotfiles/
+clang-format /home/fbest/.dotfiles/.clang-format
 config/* /home/fbest/.dotfiles/.config/
 vim/* /home/fbest/.dotfiles/.vim/
 foot/ /home/fbest/.dotfiles/.config/

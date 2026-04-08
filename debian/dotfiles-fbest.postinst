@@ -24,6 +24,7 @@ dpkg-statoverride --update --add fbest fbest 0640 /home/fbest/.Xdefaults
 dpkg-statoverride --update --add fbest fbest 0640 /home/fbest/.Xresources
 dpkg-statoverride --update --add fbest fbest 0640 /home/fbest/.bash_aliases
 dpkg-statoverride --update --add fbest fbest 0640 /home/fbest/.bashrc
+dpkg-statoverride --update --add fbest fbest 0640 /home/fbest/.clang-format
 dpkg-statoverride --update --add fbest fbest 0640 /home/fbest/.config
 dpkg-statoverride --update --add fbest fbest 0640 /home/fbest/.config/flake8
 dpkg-statoverride --update --add fbest fbest 0640 /home/fbest/.config/pep8
