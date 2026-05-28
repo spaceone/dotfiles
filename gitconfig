@@ -1,6 +1,9 @@
 [user]
 	name = SpaceOne
 	email = space@wechall.net
+[pull]
+	rebase = true	; Only rebase when pulling, no merge.
+	ff = only	; Allow only fast-forward (no merge commit) rebase when pulling with rebase.
 [alias]
 	fixup=commit --fixup
 	a = commit --amend
@@ -13,6 +16,7 @@
 	sl = stash list
 	sp = stash pop
 	ed = branch --edit-description
+	ft = fetch
 	f = commit --ammend
 	tf = "!f() { \
 		FILE=\"$1\"; \
@@ -20,7 +24,7 @@
 		COMMIT=$(git log -n 1 --pretty=format:%H -- \"$FILE\"); \
 		git commit --fixup=\"$COMMIT\" \"$@\"; \
 	}; f"  # tip fixup
-
+	vimerge = mergetool -t vimdiff
 
 	st = status -s --untracked-files=all
 	std = status -s --untracked-files=normal
@@ -75,6 +79,7 @@
 	rba = rebase --abort
 	rbc = rebase --continue
 	rb = rebase --autosquash -i
+	rbu = "!f() { git rebase \"origin/$(git config merge-request.target)\"; }; f"
 	cpc = cherry-pick --continue
 	cl = "!f() { git log --format=format:\"[$(git describe --contains --all HEAD)] %C(auto)%h %s\" --stat=${COLUMNS:-100},,10 \"${@:--1}\";};f"
 	c = "!c() { git commit -e -m \"$(dpkg-parsechangelog -l ${GIT_PREFIX:-.}/debian/changelog -S Changes | tail -n +4 | sed 's/^\\s*\\*\\s*//g')\" \"$@\";};c"
@@ -116,7 +121,7 @@
 
 [merge "merge-debian-changelog"]
 	name = debian/changelog merge driver
-	driver = ~/git/toolshed/VCS/merge-debian-changelog -vvv --preserve %A %B %A
+	driver = ~/git/toolshed/VCS/merge-debian-changelog -vvv %A %B %A
 
 [diff "jpg"]
 	textconv = exif
