@@ -54,3 +54,10 @@ docs/_build/
 target/
 
 debian/dotfiles-ucs-root.install
+debian/tmp/
+debian/dotfiles-ucs-root/
+debian/dotfiles-fbest/
+debian/*.substvars
+debian/.debhelper
+debian/debhelper-build-stamp
+debian/files
