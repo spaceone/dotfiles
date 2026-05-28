@@ -1,3 +1,9 @@
+dotfiles-fbest (1.0.0) unstable; urgency=medium
+
+  * use XDG Base Directory Standard layout
+
+ -- Florian Best <best@univention.de>  Thu, 28 May 2026 12:42:16 +0200
+
 dotfiles-fbest (0.0.0-1) unstable; urgency=medium
 
   * Initial Release

@@ -1,3 +1,8 @@
+if [ -f "${XDG_CONFIG_HOME:-$HOME/.config}/bash/commons" ]; then
+	export SHELL_NAME=bash
+	export completion_func=complete
+	source "${XDG_CONFIG_HOME:-$HOME/.config}/bash/commons"
+fi
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
@@ -8,7 +13,7 @@ export PATH="~/.local/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/gam
 export EDITOR='vim'
 export LANG='de_DE.UTF-8'
 export PAGER='less'
-[ -e ~/.pythonrc.py ] && export PYTHONSTARTUP=$HOME/.pythonrc.py
+[ -e ~/.config/.pythonrc.py ] && export PYTHONSTARTUP="$HOME/.config/.pythonrc.py"
 export GREP_COLORS='mt=1;32'
 PROMPT_COMMAND='history -a' # write out history after each command
 
@@ -55,7 +60,7 @@ fi
 
 [ -r /usr/share/git/git-prompt.sh ] && . /usr/share/git/git-prompt.sh
 [ -r /etc/bash_aliases ] && . /etc/bash_aliases
-[ -r ~/.bash_aliases ] && . ~/.bash_aliases
+[ -r ~/.config/bash/aliases ] && . ~/.config/bash/aliases
 [ -r ~/.univentionrc ] && . ~/.univentionrc
 [ -r ~/.homerc ] && . ~/.homerc
 

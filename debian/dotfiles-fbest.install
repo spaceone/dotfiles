@@ -1,29 +1,9 @@
-#!/usr/bin/dh-exec
-Xdefaults => /home/fbest/.dotfiles/.Xdefaults
-Xresources => /home/fbest/.dotfiles/.Xresources
-bash.bashrc => /home/fbest/.dotfiles/.bashrc
-bash_aliases => /home/fbest/.dotfiles/.bash_aliases
-bin/ /home/fbest/.dotfiles/
-clang-format /home/fbest/.dotfiles/.clang-format
-config/* /home/fbest/.dotfiles/.config/
-vim/* /home/fbest/.dotfiles/.vim/
-foot/ /home/fbest/.dotfiles/.config/
-gitattributes => /home/fbest/.dotfiles/.gitattributes
-gitconfig => /home/fbest/.dotfiles/.gitconfig
-i3/config => /home/fbest/.dotfiles/.i3/config
-i3status.conf => /home/fbest/.dotfiles/.i3status.conf
-inputrc => /home/fbest/.dotfiles/.inputrc
-packages.pip /home/fbest/.dotfiles/.templates/
-pre-push /home/fbest/.dotfiles/.templates/
-profile => /home/fbest/.dotfiles/.profile
-pylintrc => /home/fbest/.dotfiles/.pylintrc
-pythonrc.py => /home/fbest/.dotfiles/.pythonrc.py
-screenrc => /home/fbest/.dotfiles/.screenrc
-sway/config => /home/fbest/.dotfiles/.config/sway/
-tmux.conf => /home/fbest/.dotfiles/.tmux.conf
-vimrc => /home/fbest/.dotfiles/.vimrc
-xinitrc => /home/fbest/.dotfiles/.xinitrc
-zshrc => /home/fbest/.dotfiles/.zshrc
-site-packages/ /home/fbest/.dotfiles/.local/lib/python3.13/
-site-packages/ /home/fbest/.dotfiles/.local/lib/python3.14/
-yapf.style => /home/fbest/.dotfiles/.config/yapf/style
+.config usr/share/dotfiles-fbest/
+.profile usr/share/dotfiles-fbest/
+.bashrc usr/share/dotfiles-fbest/
+.zshenv usr/share/dotfiles-fbest/
+dnsmasq.d etc/NetworkManager/
+bin usr/share/dotfiles-fbest/
+templates usr/share/dotfiles-fbest/
+site-packages usr/share/dotfiles-fbest/.local/lib/python3.13/
+site-packages usr/share/dotfiles-fbest/.local/lib/python3.14/

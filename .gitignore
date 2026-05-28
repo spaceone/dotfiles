@@ -61,3 +61,10 @@ debian/*.substvars
 debian/.debhelper
 debian/debhelper-build-stamp
 debian/files
+
+
+.config/claude/
+.config/gtk-2.0/
+.config/htop/
+.config/ipython/
+.config/tmux/plugins/

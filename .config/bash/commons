@@ -1,0 +1,86 @@
+#!/bin/env bash
+
+# Env Bootstrap & XDG {
+	# Set XDG envvars to default values, so that scripts can refer to them (like in ~/.config/nvim/syntax/)
+	# Reference: https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html
+	# Don't use these directly, but substitute for default value if empty:
+	# - ${XDG_CONFIG_HOME:-$HOME/.config}
+	# - ${XDG_DATA_HOME:-$HOME/.local/share}
+	# - ${XDG_STATE_HOME:-$HOME/.local/state}
+	# - ${XDG_CACHE_HOME:-$HOME/.cache}
+	export XDG_CONFIG_HOME="${XDG_CONFIG_HOME:-$HOME/.config}"
+	export XDG_DATA_HOME="${XDG_DATA_HOME:-$HOME/.local/share}"
+	export XDG_STATE_HOME="${XDG_STATE_HOME:-$HOME/.local/state}"
+	export XDG_CACHE_HOME="${XDG_CACHE_HOME:-$HOME/.cache}"
+	export XDG_RUNTIME_DIR="${XDG_RUNTIME_DIR:-$HOME/.local/run}"  # Need to be set for yarn(1).
+
+	# Make programs respect XDG.
+	export INPUTRC=$XDG_CONFIG_HOME/readline/inputrc
+	export KDEHOME=$XDG_CONFIG_HOME/kde
+	export MPLAYER_HOME=$XDG_CONFIG_HOME/mplayer
+	export SCREENRC=$XDG_CONFIG_HOME/screen/screenrc
+	export CGDB_DIR=$XDG_CONFIG_HOME/cgdb
+	export GRADLE_USER_HOME=$XDG_DATA_HOME/gradle
+	export GRIPHOME=$XDG_CONFIG_HOME/grip
+	export GTK2_RC_FILES="$XDG_CONFIG_HOME"/gtk-2.0/gtkrc
+	export SQLITE_HISTORY=$XDG_DATA_HOME/sqlite_history
+	export XINITRC=$XDG_CONFIG_HOME/X11/xinitrc
+	export ACKRC=$XDG_CONFIG_HOME/ack/ackrc	# Project local .ackrc is still possible.
+	export WGETRC=$XDG_CONFIG_HOME/wget/wgetrc
+	export GDBHISTFILE=$XDG_DATA_HOME/gdb/history
+	export SOLARGRAPH_CACHE=$XDG_CACHE_HOME/solargraph
+	export TRAVIS_CONFIG_PATH=$XDG_CONFIG_HOME/travis
+	export RIPGREP_CONFIG_PATH=$XDG_CONFIG_HOME/ripgrep/config
+	export GNUPGHOME="$XDG_DATA_HOME"/gnupg
+	export DOCKER_CONFIG="$XDG_CONFIG_HOME"/docker
+	export ANDROID_HOME="$XDG_DATA_HOME"/android
+	export NODE_REPL_HISTORY="$XDG_DATA_HOME"/node_repl_history
+
+	# fzf-marks
+	if [ "$CODESPACES" = true ]; then
+		# Pre-coded bookarmsk for Codespaces env.
+		export FZF_MARKS_FILE=$XDG_CONFIG_HOME/fzf-marks/marks-codespaces
+	else
+		export FZF_MARKS_FILE=$XDG_CONFIG_HOME/fzf-marks/marks
+	fi
+
+	# Octave
+	export OCTAVE_SITE_INITFILE=$XDG_CONFIG_HOME/octave/octaverc
+	export OCTAVE_HISTFILE=$XDG_CACHE_HOME/octave-hsts
+
+	# XCompose
+	export XCOMPOSECACHE=$XDG_CACHE_HOME/X11/XCompose
+	export XCOMPOSEFILE=$XDG_CONFIG_HOME/X11/XCompose
+
+	# Gems
+	#export GEM_SPEC_CACHE=$XDG_CACHE_HOME/gem # TODO maybe also not needed, try disable to prevent ruby build issues.
+	# NOTE GEM_HOME cause issues (openssl lib can't be compiled) when using rbevn to install new ruby versions. https://github.com/asdf-vm/asdf-ruby/issues/206#issuecomment-860106503
+	# It might not be necessary to do this when using asdf, as gems are installed to asdf version dirs.
+	#export GEM_HOME=$XDG_DATA_HOME/gem
+	#export PATH="$GEM_HOME/bin:$PATH"
+
+	# Bundle
+	export BUNDLE_USER_CONFIG=$XDG_CONFIG_HOME/bundle/config
+	export BUNDLE_USER_CACHE=$XDG_CACHE_HOME/bundle
+	export BUNDLE_USER_PLUGIN=$XDG_DATA_HOME/bundle
+
+	# NPM
+	export NPM_CONFIG_USERCONFIG=$XDG_CONFIG_HOME/npm/npmrc
+	export PATH="$XDG_DATA_HOME/npm/bin:$PATH"
+
+	# Mailcap. Seems like can use envvar at least for NeoMutt. Ref: https://manpages.debian.org/testing/neomutt/neomutt.1.en.html
+	export MAILCAPS="$XDG_DATA_HOME:$MAILCAPS"
+# }
+
+# Paths {
+	# Make the path available in subshells. Export is only needed once.
+	export PATH
+
+	# Include system binaries.
+	PATH="/usr/local/bin:/usr/local/sbin:/sbin:/usr/sbin:$PATH"
+	# Include binaries in home directory.
+	PATH="$HOME/bin:$PATH"
+
+	# E.g. poetry installs here.
+	test -d $HOME/.local/bin && PATH="$HOME/.local/bin:$PATH"
+# }
